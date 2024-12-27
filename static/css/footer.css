@@ -1,0 +1,67 @@
+/* Resetting margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the footer */
+footer.footer {
+    background-color: #333;  /* Dark background color */
+    color: white;            /* White text color */
+    text-align: center;      /* Centered text */
+    padding: 20px 0;         /* Padding around the footer */
+}
+
+/* Footer Left Section */
+.footer-left p {
+    margin-bottom: 10px;
+    font-size: 16px;  /* Slightly smaller text */
+}
+
+/* Footer Center Section */
+.footer-center {
+    margin: 20px 0;
+}
+
+.footer-links {
+   
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;        /* Space between each link */
+}
+
+.footer-links a {
+    color: white;          /* White text color */
+    text-decoration: none; /* Remove underlines */
+    font-size: 16px;       /* Font size for the links */
+}
+
+.footer-links a:hover {
+    color: #3498db;        /* Blue color on hover */
+    text-decoration: underline;  /* Underline on hover */
+}
+
+/* Footer Right Section (Social Links) */
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.social-links li {
+    display: inline;        /* Display links in a row */
+    margin: 0 15px;         /* Space between social icons */
+}
+
+.social-links a {
+    color: white;           /* White text color for social links */
+    text-decoration: none; /* Remove underlines */
+    font-size: 18px;        /* Larger font size for social icons */
+}
+
+.social-links a:hover {
+    color: #3498db;         /* Blue color on hover */
+}

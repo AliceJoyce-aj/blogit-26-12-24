@@ -1,0 +1,105 @@
+/* main.css */
+/* General Body Styling */
+body {
+    background-color: lightskyblue;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+/* Set the width and height for the carousel */
+.carousel-inner {
+    width: 1500px;  /* Set the carousel width to 2100px */
+    height: 650px;  /* Set the carousel height to 410px */
+    margin: auto;   /* Centers the carousel horizontally */
+}
+
+/* Apply styling to the carousel images */
+.carousel-item img {
+    object-fit: cover;  /* Ensures images cover the entire carousel area */
+    width: 1500px;       /* Make images fill the carousel width */
+    height: 650px;       /* Ensure images fill the height of the carousel */
+}
+
+/* Container styling */
+.container {
+    padding: 20px; /* Adds padding around the container */
+}
+
+/* Card styling */
+.card {
+    margin: 15px auto; /* Adds spacing between cards */
+    border: 1px solid #ddd; /* Subtle border for cards */
+    border-radius: 8px; /* Rounds the card corners */
+    overflow: hidden; /* Ensures content doesn't spill out */
+    background-color: #fff; /* White background for cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Card image styling */
+.card-img-top {
+    width: 100%; /* Full width of the card */
+    height: 180px; /* Fixed height for uniform card size */
+    object-fit: cover; /* Maintains image aspect ratio */
+}
+
+/* Card body styling */
+.card-body {
+    padding: 15px; /* Space inside the card body */
+}
+
+/* Card title */
+.card-title {
+    font-size: 1.25rem; /* Slightly larger font size */
+    font-weight: bold; /* Bold title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* Card text */
+.card-text {
+    font-size: 1rem; /* Standard font size */
+    color: #6c757d; /* Subtle gray color for text */
+    line-height: 1.5; /* Better readability */
+}
+
+/* General container styling */
+.container {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+.table thead {
+    background-color: #4986cb;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table thead th {
+    padding: 12px 15px;
+    font-size: 1rem;
+}
+
+/* Table rows styling */
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody td {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
