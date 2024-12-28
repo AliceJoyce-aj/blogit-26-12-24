@@ -23,7 +23,12 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
-    path('blogview',views.blogview,name='blogview'),
+    path('create_blog',views.create_blog,name='create_blog'),
+    path('viewbloglist/', views.viewbloglist, name='viewbloglist'),
+    path('detailedview/<int:id>/', views.detailedview, name='detailedview'),
+    path('blogdelete/<int:id>',views.blogdelete,name='blogdelete'),
+    
+
 
 
 
