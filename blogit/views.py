@@ -5,7 +5,8 @@ from django.http import HttpResponse
 from .models import BlogDetails
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    data = BlogDetails.objects.all()
+    return render(request,'index.html',{'result':data})
 
 
 def create_blog(request):
@@ -30,8 +31,26 @@ def detailedview(request, id):
 def blogdelete(request,id):
     data=BlogDetails.objects.get(pk=id)
     data.delete()
-    return redirect('viewbloglist')
+    return redirect('index')
 
 
+def blogupdate(request, id):
+   
+    data = get_object_or_404(BlogDetails, id=id)
 
+    if request.method == 'POST':
+        blog_title = request.POST.get('blog_title')
+        blog_date = request.POST.get('blog_date')
+        blog_content = request.POST.get('blog_content')
 
+        
+        data.blog_title = blog_title
+        data.blog_date = blog_date
+        data.blog_content = blog_content
+        data.save()
+
+       
+        return redirect('detailedview', id=data.id)
+
+    
+    return render(request, 'update_blog.html', {'result': data})

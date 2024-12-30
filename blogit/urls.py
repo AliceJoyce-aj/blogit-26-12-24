@@ -27,6 +27,8 @@ urlpatterns = [
     path('viewbloglist/', views.viewbloglist, name='viewbloglist'),
     path('detailedview/<int:id>/', views.detailedview, name='detailedview'),
     path('blogdelete/<int:id>',views.blogdelete,name='blogdelete'),
+    path('blog/update/<int:id>/', views.blogupdate, name='blogupdate'),
+    
     
 
 

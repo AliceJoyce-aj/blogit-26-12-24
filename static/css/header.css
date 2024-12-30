@@ -5,12 +5,11 @@ body {
 }
 
 header {
-    background-color: lightskyblue; /* Set the header background to blue */
-    padding: 50px 20px; /* Add padding for spacing */
-    text-align: center; /* Center-align the title text */
+    background-color: lightskyblue; 
+    padding: 50px 20px; 
+    text-align: center; 
 }
 
-/* Header Styling */
 .header-title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
@@ -26,7 +25,7 @@ header {
     background-color: #4986cb;
 }
 
-/* Search Button Styling */
+
 .btn-outline-success {
     border-color: #4986cb;
     color: #4986cb;
@@ -37,48 +36,45 @@ header {
     color: white;
 }
 
-/* Navbar Styling */
 .navbar {
-    background-color: white; /* Navbar remains white */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for separation */
-    color: black; /* Text color for navbar */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: black; 
     font-size: larger;
 }
 
 .navbar-brand {
-    color: #4986cb !important; /* Navbar brand text color */
+    color: #4986cb;
     font-weight: bold;
 }
 
-/* Navbar Links - Square and Brick Effect */
+
 .navbar-nav .nav-item {
-    margin: 0 10px; /* Space out the nav items */
+    margin: 0 10px;
 }
 
 .navbar-nav .nav-link {
-    display: block; /* Make the link block-level */
-    padding: 10px 20px; /* Add padding for a brick-like look */
-    border: 2px solid transparent; /* Transparent border for the square shape */
-    border-radius: 5px; /* Slight rounding of corners */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    padding: 10px 20px; 
+    border: 2px solid transparent;
+    border-radius: 5px; 
+   
 }
 
-/* On hover, make the brick-like effect (only for nav links) */
 .navbar-nav .nav-link:hover {
-    background-color: #4986cb; /* Color change on hover */
-    color: white; /* Change text color to white */
-    border-color: #4986cb; /* Match border color with background */
-    transform: translateY(-5px); /* Slight lift effect */
+    background-color: #4986cb; 
+    color: white; 
+    border-color: #4986cb; 
+
 }
 
-/* Navbar Toggler Icon - Style for the mobile menu */
+
 .navbar-toggler {
     height: 50px;
     width: 50px;
     border: none;
 }
 
-/* Ensure no hover effect for the Blogit text */
+
 .navbar-brand:hover {
-    color: #4986cb !important; /* Keep "Blogit" color the same on hover */
+    color: #4986cb; 
 }

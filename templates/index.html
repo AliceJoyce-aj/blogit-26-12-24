@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <!-- Bootstrap CSS -->
+    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
@@ -14,7 +14,7 @@
 </head>
 <body>
     
-    <!-- Carousel HTML Structure -->
+
     <div id="carouselExample" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -40,7 +40,7 @@
             </div>
         </div>
     
-        <!-- Carousel controls -->
+  
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -51,10 +51,8 @@
         </a>
     </div>
     
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- Bootstrap JS -->
+    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <div class="container">
@@ -94,9 +92,31 @@
           </div>
         </div>
       </div>
-      
-      
-           
+      <div class="container">
+        <div class="row">
+            {% for i in result %}
+            <div class="col-md-4">
+                <div class="card mb-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i.blog_title }}</h5>
+                        <p class="card-text"><strong>Date:</strong> {{ i.blog_date }}</p>
+                        <a href="{% url 'detailedview' id=i.id %}" class="btn btn-primary">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-square-fill ms-2" viewBox="0 0 16 16">
+                                <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No blogs available.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+               
 </body>
 </html>
 {% include 'footer.html' %}
