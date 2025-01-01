@@ -28,6 +28,7 @@ urlpatterns = [
     path('detailedview/<int:id>/', views.detailedview, name='detailedview'),
     path('blogdelete/<int:id>',views.blogdelete,name='blogdelete'),
     path('blog/update/<int:id>/', views.blogupdate, name='blogupdate'),
+    path('',include("userapp.urls")),
     
     
 
@@ -35,4 +36,4 @@ urlpatterns = [
 
 
 
-]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

@@ -3,6 +3,8 @@ from . models import *
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import BlogDetails
+from userapp . models import UserDetails
+from . models import *
 # Create your views here.
 def index(request):
     data = BlogDetails.objects.all()
@@ -18,8 +20,9 @@ def create_blog(request):
         data.save()
     return render(request, 'createblog.html')
 
-def viewbloglist(request):
-    data = BlogDetails.objects.all()
+
+def viewbloglist(request): 
+    data = BlogDetails.objects.filter(blog_author=UserDetails.username)
     return render(request, 'bloglist.html', {'result': data})
 
     
@@ -41,11 +44,13 @@ def blogupdate(request, id):
     if request.method == 'POST':
         blog_title = request.POST.get('blog_title')
         blog_date = request.POST.get('blog_date')
+        blog_author = request.POST.get('blog_author')
         blog_content = request.POST.get('blog_content')
 
         
         data.blog_title = blog_title
         data.blog_date = blog_date
+        data.blog_author = blog_author
         data.blog_content = blog_content
         data.save()
 

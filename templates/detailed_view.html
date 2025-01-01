@@ -17,7 +17,8 @@
                 <h2>{{ result.blog_title }}</h2> 
             </div>
             <div class="card-body">
-                <p><strong>Date:</strong> {{ result.blog_date }}</p>  
+                <p><strong>Date:</strong> {{ result.blog_date }}</p> 
+                <p><strong>Author:</strong> {{ result.blog_author }}</p>  
                 <p><strong>Content:</strong></p>
                 <p>{{ result.blog_content }}</p>
                 <p><a href="{% url 'index' %}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16" style="margin: 10px;">
