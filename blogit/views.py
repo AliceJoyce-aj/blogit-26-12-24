@@ -9,24 +9,28 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 
 # Create your views here.
-# def index(request):
-#     uid = request.session.get('uid') 
-    
-#     if uid:
-#         try:
-           
-#             user = UserDetails.objects.get(id=uid)  
-#             blog_author = user.username 
+def index(request):
+    uid = request.session.get('uid')  
+    query = request.GET.get('q', '')
+    if uid:
+        try:
             
-          
-#             data = BlogDetailss.objects.filter(blog_author=blog_author)
-#         except UserDetails.DoesNotExist:
-#             data = BlogDetailss.objects.none()  
-#     else:
+            user = UserDetails.objects.get(id=uid)  
+            blog_author = user.username 
+            
+            
+            data = BlogDetailss.objects.filter(blog_author=blog_author)
+        except UserDetails.DoesNotExist:
+            
+            data = BlogDetailss.objects.none()
+    else:
+        
+        data = BlogDetailss.objects.all()
+    
+    if query:
+        data = data.filter(blog_title__icontains=query)
        
-#         data = BlogDetailss.objects.all()
-
-#     return render(request, 'index.html', {'result': data})
+    return render(request, 'index.html', {'result': data, 'query': query})
 
 def create_blog(request):
     uid=request.session.get('uid')
@@ -99,28 +103,7 @@ def blogupdate(request, id):
 
 from django.db.models import Q
 
-def index(request):
-    uid = request.session.get('uid')  
-    query = request.GET.get('q', '')
-    if uid:
-        try:
-            
-            user = UserDetails.objects.get(id=uid)  
-            blog_author = user.username 
-            
-            
-            data = BlogDetailss.objects.filter(blog_author=blog_author)
-        except UserDetails.DoesNotExist:
-            
-            data = BlogDetailss.objects.none()
-    else:
-        
-        data = BlogDetailss.objects.all()
-    
-    if query:
-        data = data.filter(blog_title__icontains=query)
-       
-    return render(request, 'index.html', {'result': data, 'query': query})
+
 
 
 
