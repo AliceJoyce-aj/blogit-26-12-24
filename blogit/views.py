@@ -9,24 +9,24 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 
 # Create your views here.
-def index(request):
-    uid = request.session.get('uid') 
+# def index(request):
+#     uid = request.session.get('uid') 
     
-    if uid:
-        try:
+#     if uid:
+#         try:
            
-            user = UserDetails.objects.get(id=uid)  
-            blog_author = user.username 
+#             user = UserDetails.objects.get(id=uid)  
+#             blog_author = user.username 
             
           
-            data = BlogDetailss.objects.filter(blog_author=blog_author)
-        except UserDetails.DoesNotExist:
-            data = BlogDetailss.objects.none()  
-    else:
+#             data = BlogDetailss.objects.filter(blog_author=blog_author)
+#         except UserDetails.DoesNotExist:
+#             data = BlogDetailss.objects.none()  
+#     else:
        
-        data = BlogDetailss.objects.all()
+#         data = BlogDetailss.objects.all()
 
-    return render(request, 'index.html', {'result': data})
+#     return render(request, 'index.html', {'result': data})
 
 def create_blog(request):
     uid=request.session.get('uid')
@@ -96,3 +96,31 @@ def blogupdate(request, id):
         return redirect('detailedview', id=data.id)
 
     return render(request, 'update_blog.html', {'result': data})
+
+from django.db.models import Q
+
+def index(request):
+    uid = request.session.get('uid')  
+    query = request.GET.get('q', '')
+    if uid:
+        try:
+            
+            user = UserDetails.objects.get(id=uid)  
+            blog_author = user.username 
+            
+            
+            data = BlogDetailss.objects.filter(blog_author=blog_author)
+        except UserDetails.DoesNotExist:
+            
+            data = BlogDetailss.objects.none()
+    else:
+        
+        data = BlogDetailss.objects.all()
+    
+    if query:
+        data = data.filter(blog_title__icontains=query)
+       
+    return render(request, 'index.html', {'result': data, 'query': query})
+
+
+
